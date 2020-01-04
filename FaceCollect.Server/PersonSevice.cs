@@ -12,6 +12,11 @@ namespace FaceCollect.Server
             return ret;
         }
 
+        public Person[] GetAllPerson()
+        {
+           return PersonStorage.GetPersons(e=> { return true; }).ToArray();
+        }
+
         public string[] GetDepartments()
         {
             var temp= File.ReadAllText("departments.txt");

@@ -44,18 +44,21 @@ namespace FaceCollect.Entity
         [OperationContract]
         Person GetPersonInfo(string certificateId, string phoneNum);
 
+        [OperationContract]
+        Person[] GetAllPerson();
+
         /// <summary>
         /// 获取部门列表
         /// </summary>
         /// <returns></returns>
         [OperationContract]
-        List<string> GetDepartments();
+        string[] GetDepartments();
 
         /// <summary>
         /// 获取职务列表
         /// </summary>
         /// <returns></returns>
         [OperationContract]
-        List<string> GetJobs();
+        string[] GetJobs();
     }
 }
