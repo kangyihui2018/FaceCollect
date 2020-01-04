@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using FaceCollect.Entity;
+using System.Linq;
 
 namespace FaceCollect.Server
 {
@@ -24,14 +25,21 @@ namespace FaceCollect.Server
             return temp.Split(new string[] { str }, System.StringSplitOptions.RemoveEmptyEntries);
         }
 
-        public List<ImageInfo> GetFace(int pageNo, int pageSize)
+        public List<ImageInfo> GetFace(int startIndex,int endIndex, bool onlyUnBindPersonPic = false)
         {
-            var files = PersonStorage.DirFacePic.GetFiles("*.jpg");
-            var start = pageNo * pageSize;
-            var end = start + pageSize;
-            end = end > files.Length ? files.Length : end;
+            FileInfo[] files = null;
+            if (!onlyUnBindPersonPic)
+            {
+                files = PersonStorage.DirFacePic.GetFiles("*.jpg");
+            }
+            else
+            {
+                files = GetUnBindPersonPic();
+            }
+            if (endIndex > files.Length)
+                endIndex = files.Length;
             List<ImageInfo> ret = new List<ImageInfo>();
-            for (int i = start; i < end; i++)
+            for (int i = startIndex; i < endIndex; i++)
             {
                 var fileInfo = files[i];
                 var imageInfo=   PersonStorage.GetImageInfoByName(fileInfo.FullName);
@@ -40,12 +48,32 @@ namespace FaceCollect.Server
             return ret;
         }
 
-        public int GetFacePageCount(int pageSize)
+        private FileInfo[] GetUnBindPersonPic()
         {
             var files = PersonStorage.DirFacePic.GetFiles("*.jpg");
-            if (pageSize <= 0) return files.Length;
-            var temp = files.Length / pageSize;
-            return files.Length % pageSize == 0 ? temp : pageSize + 1;
+            List<FileInfo> infos = new List<FileInfo>();
+           var temp= this.GetAllPerson();
+            foreach (var item in files)
+            {
+                if (!temp.Any(e => item.Name == e.FacePicFileName))
+                {
+                    infos.Add(item);
+                }
+            }
+            return infos.ToArray();
+        }
+
+        public int GetPicCount(bool onlyUnBindPersonPic = false)
+        {
+            if (onlyUnBindPersonPic)
+            {
+                return GetUnBindPersonPic().Length;
+            }
+            else
+            {
+                var files = PersonStorage.DirFacePic.GetFiles("*.jpg");
+                return files.Length;
+            }
         }
 
         public string[] GetJobs()

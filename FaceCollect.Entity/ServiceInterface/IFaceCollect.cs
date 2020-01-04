@@ -13,23 +13,26 @@ namespace FaceCollect.Entity
     public interface IFaceCollect
     {
         /// <summary>
-        /// 按页获取人脸图片
+        /// 按索引获取图片
         /// </summary>
-        /// <param name="page"></param>
+        /// <param name="startIndex">起始索引</param>
+        /// <param name="endIndex">结束索引</param>
+        /// <param name="onlyUnBindPersonPic">是否仅返回未绑定到人员的图片信息</param>
         /// <returns></returns>
         [OperationContract]
-        List<ImageInfo> GetFace(int pageNo, int pageSize);
+        List<ImageInfo> GetFace(int startIndex, int endIndex, bool onlyUnBindPersonPic = false);
 
         /// <summary>
-        /// 获取人脸图片分页信息
+        /// 获取人脸图片数量
         /// </summary>
+        /// <param name="onlyUnBindPersonPic">是否仅返回未绑定到人员的图片数量</param>
         /// <returns></returns>
         [OperationContract]
-        int GetFacePageCount(int pageSize);
+        int GetPicCount(bool onlyUnBindPersonPic = false);
 
        /// <summary>
        /// 增加或编辑人员信息
-        /// </summary>
+       /// </summary>
        /// <param name="person"></param>
        /// <returns></returns>
         [OperationContract]
