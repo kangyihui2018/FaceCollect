@@ -36,7 +36,7 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="5">
                     <TextBlock>证件号:</TextBlock>
-                    <TextBox MinWidth="160">
+                    <TextBox MinWidth="160" HorizontalAlignment="Center" VerticalAlignment="Center" >
                     <TextBox.Resources>
                         <VisualBrush x:Key="HintText" TileMode="None" Opacity="0.5" Stretch="None" AlignmentX="Left">
                             <VisualBrush.Visual>
