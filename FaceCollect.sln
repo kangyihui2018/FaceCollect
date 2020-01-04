@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaceCollect", "FaceCollect\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaceCollect.Entity", "FaceCollect.Entity\FaceCollect.Entity.csproj", "{5D622E1A-F1DB-467C-8B40-F402D6F2F3DF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FaceCollect.Server", "FaceCollect.Server\FaceCollect.Server.csproj", "{699A9853-957F-4D07-BD55-9253EE8FE317}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5D622E1A-F1DB-467C-8B40-F402D6F2F3DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D622E1A-F1DB-467C-8B40-F402D6F2F3DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D622E1A-F1DB-467C-8B40-F402D6F2F3DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{699A9853-957F-4D07-BD55-9253EE8FE317}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{699A9853-957F-4D07-BD55-9253EE8FE317}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{699A9853-957F-4D07-BD55-9253EE8FE317}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{699A9853-957F-4D07-BD55-9253EE8FE317}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
