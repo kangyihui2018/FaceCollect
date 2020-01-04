@@ -107,5 +107,11 @@
   <ItemGroup>
     <Resource Include="window.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FaceCollect.Entity\FaceCollect.Entity.csproj">
+      <Project>{5d622e1a-f1db-467c-8b40-f402d6f2f3df}</Project>
+      <Name>FaceCollect.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
