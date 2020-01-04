@@ -8,6 +8,7 @@ namespace FaceCollect.Server
     {
         static void Main(string[] args)
         {
+         
         }
     }
 }
