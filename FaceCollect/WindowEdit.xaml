@@ -14,30 +14,33 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <StackPanel Orientation="Vertical" Margin="5">
-            <StackPanel Orientation="Horizontal" Margin="5">
-                <TextBlock>部&#160;&#160;&#160;门:</TextBlock>
-                <ComboBox MinWidth="160"></ComboBox>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="5">
-                <TextBlock>职&#160;&#160;&#160;务:</TextBlock>
-                <ComboBox MinWidth="160"></ComboBox>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="5">
-                <TextBlock>姓&#160;&#160;&#160;名:</TextBlock>
-                <TextBox MinWidth="160"></TextBox>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="5">
-                <TextBlock>电&#160;&#160;&#160;话:</TextBlock>
-                <TextBox MinWidth="160"></TextBox>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="5">
-                <TextBlock>证件号:</TextBlock>
-                <TextBox MinWidth="160"></TextBox>
-            </StackPanel>
-        </StackPanel>
+        <Border BorderThickness="0,0,1,0" Margin="3" BorderBrush="BurlyWood" >
+            <WrapPanel Margin="5" VerticalAlignment="Center">
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <TextBlock>部&#160;&#160;&#160;门:</TextBlock>
+                    <ComboBox MinWidth="160"></ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <TextBlock>职&#160;&#160;&#160;务:</TextBlock>
+                    <ComboBox MinWidth="160"></ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <TextBlock>姓&#160;&#160;&#160;名:</TextBlock>
+                    <TextBox MinWidth="160"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <TextBlock>电&#160;&#160;&#160;话:</TextBlock>
+                    <TextBox MinWidth="160"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <TextBlock>证件号:</TextBlock>
+                    <TextBox MinWidth="160"></TextBox>
+                </StackPanel>
+            </WrapPanel>
+        </Border>
+      
         <Image Grid.Column="1" Margin="5" Height="140" Width="120"  Source="/FaceCollect;component/defaultRect.png"></Image>
         <Border BorderThickness="0,1,0,1" Margin="3" BorderBrush="BurlyWood" Grid.ColumnSpan="2" Grid.Row="1">
         <StackPanel Grid.ColumnSpan="2" Grid.Row="1" >
