@@ -11,6 +11,27 @@ namespace FaceCollect.Server
             return ret;
         }
 
+        public List<string> GetDepartments()
+        {
+            return new List<string>()
+            {
+                "院领导",
+                "检委会",
+                "政治部",
+                "监察部",
+                "院办公室",
+                "第一检察部",
+                "第二检察部",
+                "第三检察部",
+                "第四检察部",
+                "第五检察部",
+                "综合业务部",
+                "法警大队",
+                "罕台检察室",
+                "基层巡回检察室"
+            };
+        }
+
         public List<ImageInfo> GetFace(int pageNo, int pageSize)
         {
             var files = PersonStorage.DirFacePic.GetFiles("*.jpg");
@@ -33,6 +54,11 @@ namespace FaceCollect.Server
             if (pageSize <= 0) return files.Length;
             var temp = files.Length / pageSize;
             return files.Length % pageSize == 0 ? temp : pageSize + 1;
+        }
+
+        public List<string> GetJobs()
+        {
+            return new List<string>();
         }
 
         public Person GetPersonInfo(string certificateId,string phoneNum)

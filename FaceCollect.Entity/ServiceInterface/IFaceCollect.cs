@@ -43,5 +43,19 @@ namespace FaceCollect.Entity
         /// <returns></returns>
         [OperationContract]
         Person GetPersonInfo(string certificateId, string phoneNum);
+
+        /// <summary>
+        /// 获取部门列表
+        /// </summary>
+        /// <returns></returns>
+        [OperationContract]
+        List<string> GetDepartments();
+
+        /// <summary>
+        /// 获取职务列表
+        /// </summary>
+        /// <returns></returns>
+        [OperationContract]
+        List<string> GetJobs();
     }
 }

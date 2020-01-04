@@ -59,5 +59,9 @@
       <Name>FaceCollect.Entity</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="derparments.txt" />
+    <Content Include="jobs.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
