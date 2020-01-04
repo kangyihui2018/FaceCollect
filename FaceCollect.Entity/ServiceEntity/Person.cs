@@ -16,7 +16,7 @@ namespace FaceCollect.Entity
 
         public string PhoneNum { get; set; }
 
-        public ImageInfo Image { get; set; }
+        public string FacePicFileName { get; set; }
 
         public string CertificateId { get; set; }
 

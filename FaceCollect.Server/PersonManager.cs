@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using FaceCollect.Entity;
 
 namespace FaceCollect.Server
@@ -13,7 +12,7 @@ namespace FaceCollect.Server
 
         public List<ImageInfo> GetFace(int pageNo, int pageSize)
         {
-            var files = FacePicHelper.DirFacePic.GetFiles("*.jpg");
+            var files = PersonStorage.DirFacePic.GetFiles("*.jpg");
             var start = pageNo * pageSize;
             var end = start + pageSize;
             end = end > files.Length ? files.Length : end;
@@ -21,7 +20,7 @@ namespace FaceCollect.Server
             for (int i = start; i < end; i++)
             {
                 var fileInfo = files[i];
-                var imageInfo=   FacePicHelper.GetImageInfoByName(fileInfo.FullName);
+                var imageInfo=   PersonStorage.GetImageInfoByName(fileInfo.FullName);
                 ret.Add(imageInfo);
             }
             return ret;
@@ -29,7 +28,7 @@ namespace FaceCollect.Server
 
         public int GetFacePageCount(int pageSize)
         {
-            var files = FacePicHelper.DirFacePic.GetFiles("*.jpg");
+            var files = PersonStorage.DirFacePic.GetFiles("*.jpg");
             if (pageSize <= 0) return files.Length;
             var temp = files.Length / pageSize;
             return files.Length % pageSize == 0 ? temp : pageSize + 1;
