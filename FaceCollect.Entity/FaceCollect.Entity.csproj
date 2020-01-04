@@ -54,7 +54,7 @@
     <Compile Include="SystemTools.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="wcfService.config" />
+    <EmbeddedResource Include="wcfService.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

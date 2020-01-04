@@ -13,7 +13,7 @@ using System.ServiceModel.Configuration;
 using System.ServiceModel.Description;
 using System.Threading.Tasks;
 
-namespace FaceWatcher.Entitys
+namespace FaceCollect.Entity
 {
     /// <summary>
     /// WCF远程调用封装类
