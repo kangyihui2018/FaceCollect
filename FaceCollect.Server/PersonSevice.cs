@@ -3,11 +3,12 @@ using FaceCollect.Entity;
 
 namespace FaceCollect.Server
 {
-    class PersonManager : FaceCollect.Entity.IFaceCollect
+    class PersonSevice : FaceCollect.Entity.IFaceCollect
     {
         public bool AddOrEditPersonInfo(Person person)
         {
-            return true;
+            var ret = PersonStorage.AddOrEdite(person);
+            return ret;
         }
 
         public List<ImageInfo> GetFace(int pageNo, int pageSize)
@@ -36,7 +37,9 @@ namespace FaceCollect.Server
 
         public Person GetPersonInfo(string certificateId,string phoneNum)
         {
-            return null;
+            var temp= PersonStorage.GetPersons(e => e.CertificateId == certificateId || e.PhoneNum == phoneNum);
+            if (temp.Count == 0) return null;
+            return temp[0];
           
         }
     }
