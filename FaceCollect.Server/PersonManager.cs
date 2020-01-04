@@ -8,7 +8,7 @@ namespace FaceCollect.Server
     {
         public bool AddOrEditPersonInfo(Person person)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public List<ImageInfo> GetFace(int pageNo, int pageSize)
@@ -35,10 +35,10 @@ namespace FaceCollect.Server
             return files.Length % pageSize == 0 ? temp : pageSize + 1;
         }
 
-        public Person GetPersonInfo(string department, string name, string phone)
+        public Person GetPersonInfo(string certificateId,string phoneNum)
         {
             return null;
-           // throw new NotImplementedException();
+          
         }
     }
 }

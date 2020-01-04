@@ -18,5 +18,7 @@ namespace FaceCollect.Entity
 
         public ImageInfo Image { get; set; }
 
+        public string CertificateId { get; set; }
+
     }
 }

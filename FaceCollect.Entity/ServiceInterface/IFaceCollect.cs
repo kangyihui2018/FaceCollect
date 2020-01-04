@@ -36,13 +36,12 @@ namespace FaceCollect.Entity
         bool AddOrEditPersonInfo(Person  person);
 
         /// <summary>
-        /// 查询人员信息
+        /// 输入证件ID或电话号码查询人员信息
         /// </summary>
-        /// <param name="department"></param>
-        /// <param name="name"></param>
-        /// <param name="phone"></param>
+        /// <param name="certificateId"></param>
+        /// <param name="phoneNum"></param>
         /// <returns></returns>
         [OperationContract]
-        Person GetPersonInfo(string department, string name, string phone);
+        Person GetPersonInfo(string certificateId, string phoneNum);
     }
 }
