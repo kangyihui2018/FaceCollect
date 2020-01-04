@@ -1,0 +1,70 @@
+﻿<Window x:Class="FaceCollect.WindowEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FaceCollect"
+        mc:Ignorable="d"
+        Title="WindowEdit" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical" Margin="5">
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock>部门:</TextBlock>
+                <ComboBox MinWidth="150"></ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock>姓名:</TextBlock>
+                <TextBox MinWidth="150"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock>证件:</TextBlock>
+                <TextBox MinWidth="150"></TextBox>
+                <TextBlock>输入身份证号或工作证号均可</TextBlock>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Margin="5" Orientation="Vertical">
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock>职务:</TextBlock>
+                <ComboBox MinWidth="160"></ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock>电话:</TextBlock>
+                <TextBox MinWidth="160"></TextBox>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Image Height="160" Width="120" Margin="3"></Image>
+                <Image Height="160" Width="120" Margin="3"></Image>
+                <Image Height="160" Width="120" Margin="3"></Image>
+                <Image Height="160" Width="120" Margin="3"></Image>
+                <Image Height="160" Width="120" Margin="3"></Image>
+                <Image Height="160" Width="120" Margin="3"></Image>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Image Height="160" Width="120" Margin="3"></Image>
+                <Image Height="160" Width="120" Margin="3"></Image>
+                <Image Height="160" Width="120" Margin="3"></Image>
+                <Image Height="160" Width="120" Margin="3"></Image>
+                <Image Height="160" Width="120" Margin="3"></Image>
+                <Image Height="160" Width="120" Margin="3"></Image>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Margin="5" Padding="3">《</Button>
+                <Button Margin="5" Padding="3">》</Button>
+            </StackPanel>
+            <StackPanel Margin="0,8" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Margin="5" Padding="3">保存</Button>
+                <Button Margin="5" Padding="3">取消</Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
