@@ -5,11 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FaceCollect"
         mc:Ignorable="d"
-        Title="WindowEdit" Height="450" Width="800">
+        Title="WindowEdit" Height="600" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition></RowDefinition>
+            <RowDefinition  Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -17,54 +18,83 @@
         </Grid.ColumnDefinitions>
         <StackPanel Orientation="Vertical" Margin="5">
             <StackPanel Orientation="Horizontal" Margin="5">
-                <TextBlock>部门:</TextBlock>
-                <ComboBox MinWidth="150"></ComboBox>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="5">
-                <TextBlock>姓名:</TextBlock>
-                <TextBox MinWidth="150"></TextBox>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="5">
-                <TextBlock>证件:</TextBlock>
-                <TextBox MinWidth="150"></TextBox>
-                <TextBlock>输入身份证号或工作证号均可</TextBlock>
-            </StackPanel>
-        </StackPanel>
-        <StackPanel Grid.Column="1" Margin="5" Orientation="Vertical">
-            <StackPanel Orientation="Horizontal" Margin="5">
-                <TextBlock>职务:</TextBlock>
+                <TextBlock>部&#160;&#160;&#160;门:</TextBlock>
                 <ComboBox MinWidth="160"></ComboBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5">
-                <TextBlock>电话:</TextBlock>
+                <TextBlock>职&#160;&#160;&#160;务:</TextBlock>
+                <ComboBox MinWidth="160"></ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock>姓&#160;&#160;&#160;名:</TextBlock>
+                <TextBox MinWidth="160"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock>电&#160;&#160;&#160;话:</TextBlock>
+                <TextBox MinWidth="160"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock>证件号:</TextBlock>
                 <TextBox MinWidth="160"></TextBox>
             </StackPanel>
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+        <Image Grid.Column="1" Margin="5" Height="140" Width="120"  Source="/FaceCollect;component/defaultRect.png"></Image>
+        <Border BorderThickness="0,1,0,1" Margin="3" BorderBrush="BurlyWood" Grid.ColumnSpan="2" Grid.Row="1">
+        <StackPanel Grid.ColumnSpan="2" Grid.Row="1" >
+            <WrapPanel Grid.ColumnSpan="2">
+                <Border BorderThickness="1" BorderBrush="Green" Margin="3" CornerRadius="5">
+                    <Image Height="140" Width="120" Margin="5" Source="/FaceCollect;component/defaultRect.png"></Image>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="Green" Margin="3" CornerRadius="5">
+                    <StackPanel HorizontalAlignment="Center">
+                        <Image Height="140" Width="120" Margin="5" Source="/FaceCollect;component/defaultRect.png"></Image>
+                    </StackPanel>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="Green" Margin="3" CornerRadius="5">
+                    <StackPanel HorizontalAlignment="Center">
+                        <Image Height="140" Width="120" Margin="5" Source="/FaceCollect;component/defaultRect.png"></Image>
+                    </StackPanel>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="Green" Margin="3" CornerRadius="5">
+                    <StackPanel HorizontalAlignment="Center">
+                        <Image Height="140" Width="120" Margin="5" Source="/FaceCollect;component/defaultRect.png"></Image>
+                    </StackPanel>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="Green" Margin="3" CornerRadius="5">
+                    <StackPanel HorizontalAlignment="Center">
+                        <Image Height="140" Width="120" Margin="5" Source="/FaceCollect;component/defaultRect.png"></Image>
+                    </StackPanel>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="Green" Margin="3" CornerRadius="5">
+                    <StackPanel HorizontalAlignment="Center">
+                        <Image Height="140" Width="120" Margin="5" Source="/FaceCollect;component/defaultRect.png"></Image>
+                    </StackPanel>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="Green" Margin="3" CornerRadius="5">
+                    <StackPanel HorizontalAlignment="Center">
+                        <Image Height="140" Width="120" Margin="5" Source="/FaceCollect;component/defaultRect.png"></Image>
+                    </StackPanel>
+                </Border>
+            </WrapPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Image Height="160" Width="120" Margin="3"></Image>
-                <Image Height="160" Width="120" Margin="3"></Image>
-                <Image Height="160" Width="120" Margin="3"></Image>
-                <Image Height="160" Width="120" Margin="3"></Image>
-                <Image Height="160" Width="120" Margin="3"></Image>
-                <Image Height="160" Width="120" Margin="3"></Image>
+                <Button Margin="5" Padding="3">&lt;&lt;上一页</Button>
+                <TextBlock VerticalAlignment="Center">第</TextBlock>
+                <ComboBox VerticalAlignment="Center" SelectedIndex="0">
+                    <ComboBox.Items>
+                        <ComboBoxItem>1</ComboBoxItem>
+                        <ComboBoxItem>2</ComboBoxItem>
+                    </ComboBox.Items>
+                </ComboBox>
+                <TextBlock VerticalAlignment="Center">页</TextBlock>
+                <Button Margin="5" Padding="3">下一页&gt;&gt;</Button>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Image Height="160" Width="120" Margin="3"></Image>
-                <Image Height="160" Width="120" Margin="3"></Image>
-                <Image Height="160" Width="120" Margin="3"></Image>
-                <Image Height="160" Width="120" Margin="3"></Image>
-                <Image Height="160" Width="120" Margin="3"></Image>
-                <Image Height="160" Width="120" Margin="3"></Image>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Margin="5" Padding="3">《</Button>
-                <Button Margin="5" Padding="3">》</Button>
-            </StackPanel>
-            <StackPanel Margin="0,8" Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Margin="5" Padding="3">保存</Button>
-                <Button Margin="5" Padding="3">取消</Button>
-            </StackPanel>
+            
+        </StackPanel>
+
+        </Border>
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Margin="0,8" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Margin="5" Padding="3">保  存</Button>
+            <Button Margin="5" Padding="3">取  消</Button>
         </StackPanel>
     </Grid>
 </Window>
