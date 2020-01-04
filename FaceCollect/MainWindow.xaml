@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FaceCollect"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="东胜检察院人员信息采集" Height="450" Width="800" Icon="/FaceCollect;component/window.ico">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"></ColumnDefinition>

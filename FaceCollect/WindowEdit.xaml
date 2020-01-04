@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FaceCollect"
         mc:Ignorable="d"
-        Title="WindowEdit" Height="600" Width="800">
+        Title="人员信息编辑" Height="600" Width="800" ShowInTaskbar="False">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
