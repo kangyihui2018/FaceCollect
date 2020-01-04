@@ -7,6 +7,35 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ListBox Grid.Column="0" MinWidth="150">
+            <TextBlock>院领导</TextBlock>
+            <TextBlock>检察委员会</TextBlock>
+        </ListBox>
+        <StackPanel Grid.Column="1">
+            <StackPanel Orientation="Horizontal" Margin="3" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <TextBlock VerticalAlignment="Center">XX部门共计(XX)人&#160;&#160;&#160;&#160;&#160;</TextBlock>
+                <Button Margin="5" Padding="3" >新 增</Button>
+                <Button Margin="5" Padding="3">修 改</Button>
+                <Button Margin="5" Padding="3">删 除</Button>
+            </StackPanel>
+            <WrapPanel>
+                <Border BorderThickness="1" BorderBrush="Green" Margin="3" CornerRadius="5">
+                    <StackPanel HorizontalAlignment="Center">
+                        <Image Height="140" Width="120" Margin="5" Source="/FaceCollect;component/defaultRect.png"></Image>
+                        <TextBlock Margin="5" HorizontalAlignment="Center">姓名:张三</TextBlock>
+                    </StackPanel>
+                </Border>
+                <Border BorderThickness="1" BorderBrush="Green" Margin="3" CornerRadius="5">
+                    <StackPanel HorizontalAlignment="Center">
+                        <Image Height="140" Width="120" Margin="5" Source="/FaceCollect;component/defaultRect.png"></Image>
+                        <TextBlock Margin="5" HorizontalAlignment="Center">姓名:李四</TextBlock>
+                    </StackPanel>
+                </Border>
+            </WrapPanel>
+        </StackPanel>
     </Grid>
 </Window>
