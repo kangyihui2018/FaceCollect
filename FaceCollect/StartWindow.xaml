@@ -9,10 +9,10 @@
         xmlns:css="clr-namespace:Plus.CSS;assembly=Plus.CSS"
         WindowStartupLocation="CenterOwner"
         Title="东胜检察院人员信息采集" Height="700" Width="990" 
-         Icon="/FaceCollect;component/window.ico">
+         Icon="/FaceCollect;component/window.ico" Background="#002357">
     <Window.Resources>
         <GeometryGroup x:Key="clipCorner" FillRule="Nonzero">
-            <RectangleGeometry RadiusX="23.8" RadiusY="25.2"  Rect="0,0,170,180"/>
+            <RectangleGeometry RadiusX="15" RadiusY="15"  Rect="0,0,170,180"/>
         </GeometryGroup>
     </Window.Resources>
     

@@ -106,6 +106,7 @@ namespace FaceCollect.ViewModels
             set
             {
                 this.index = value;
+                this.OnPropertyChanged(()=>Index);
                 this.OnLoad();
             }
         }
@@ -120,7 +121,7 @@ namespace FaceCollect.ViewModels
             this.SaveCommand = new RelayCommand(this.OnSave);
             this.OnLoad();
             this.PreviousPageCommand = new RelayCommand(this.OnPreviousPage,(e)=>this.Index!=0);
-            this.NextPageCommand = new RelayCommand(this.OnNextPage, e => this.Index != this.Nums.Count - 1);
+            this.NextPageCommand = new RelayCommand(this.OnNextPage, e => this.Index != this.Nums.Last());
             this.filename = "";
             this.facePic = ImageManager.GetDefaultFace("defaultRect.png");
             this.ViewDoubleClickCommand = new RelayCommand(this.OnDoubleClick);

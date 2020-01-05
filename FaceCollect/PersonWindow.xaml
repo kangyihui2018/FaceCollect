@@ -8,7 +8,7 @@
         Style="{DynamicResource WindowLightSimple}"
          xmlns:css="clr-namespace:Plus.CSS;assembly=Plus.CSS"
         WindowStartupLocation="CenterScreen" BorderThickness="1"  BorderBrush="Black"
-        Title="人员信息" Height="700" Width="900" ShowInTaskbar="False">
+        Title="人员信息" Height="700" Width="980" ShowInTaskbar="False" Background="#002357">
     <Window.Resources>
         <LinearGradientBrush  x:Key="BorderLine" StartPoint="0,0.5" EndPoint="1,0.5" >
             <GradientStop Offset="0.0" Color="#024EA3" />
@@ -23,7 +23,7 @@
         </LinearGradientBrush>
 
         <GeometryGroup x:Key="clipCorner" FillRule="Nonzero">
-            <RectangleGeometry RadiusX="23.8" RadiusY="25.2"  Rect="0,0,119,126"/>
+            <RectangleGeometry RadiusX="10" RadiusY="10"  Rect="0,0,119,126"/>
         </GeometryGroup>
 
     </Window.Resources>
