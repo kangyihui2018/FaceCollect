@@ -25,7 +25,7 @@ namespace FaceCollect.Server
             return temp.Split(new string[] { str }, System.StringSplitOptions.RemoveEmptyEntries);
         }
 
-        public List<ImageInfo> GetFace(int startIndex,int endIndex, bool onlyUnBindPersonPic = false)
+        public ImageInfo[] GetFace(int startIndex,int endIndex, bool onlyUnBindPersonPic = false)
         {
             FileInfo[] files = null;
             if (!onlyUnBindPersonPic)
@@ -43,9 +43,10 @@ namespace FaceCollect.Server
             {
                 var fileInfo = files[i];
                 var imageInfo=   PersonStorage.GetImageInfoByName(fileInfo.FullName);
+
                 ret.Add(imageInfo);
             }
-            return ret;
+            return ret.ToArray();
         }
 
         private FileInfo[] GetUnBindPersonPic()

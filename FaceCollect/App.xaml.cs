@@ -18,7 +18,7 @@ namespace FaceCollect
 
         protected override void OnStartup(StartupEventArgs e)
         {
-           var temp= RasAssist.CallRemoteService<IFaceCollect, string[]>(ee=>ee.GetDepartments());
+            ImageManager.InitImage();
             base.OnStartup(e);
         }
     }

@@ -11,7 +11,8 @@ namespace FaceCollect.Server
         static void Main(string[] args)
         {
             PersonStorage.Init();
-            RasAssist.OpenHost<IFaceCollect, PersonSevice>();
+            RasAssist.OpenHost<IFaceCollect, PersonSevice>();     
+
             while (true)
             {
                 Console.Read();

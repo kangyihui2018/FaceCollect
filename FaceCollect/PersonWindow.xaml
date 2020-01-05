@@ -1,0 +1,128 @@
+﻿<css:BlankWindow x:Class="FaceCollect.PersonWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FaceCollect"
+        mc:Ignorable="d"
+        Style="{DynamicResource WindowLightSimple}"
+         xmlns:css="clr-namespace:Plus.CSS;assembly=Plus.CSS"
+        WindowStartupLocation="CenterScreen" BorderThickness="1"  BorderBrush="Black"
+        Title="人员信息" Height="700" Width="900" ShowInTaskbar="False">
+    <Window.Resources>
+        <LinearGradientBrush  x:Key="BorderLine" StartPoint="0,0.5" EndPoint="1,0.5" >
+            <GradientStop Offset="0.0" Color="#024EA3" />
+            <GradientStop Offset="0.5" Color="#003271" />
+            <GradientStop Offset="1.0" Color="#024EA3" />
+        </LinearGradientBrush>
+
+        <LinearGradientBrush  x:Key="VRBorderLine" StartPoint="0.5,0" EndPoint="0.5,1" >
+            <GradientStop Offset="0.0" Color="#024EA3" />
+            <GradientStop Offset="0.5" Color="#003271" />
+            <GradientStop Offset="1.0" Color="#024EA3" />
+        </LinearGradientBrush>
+
+        <GeometryGroup x:Key="clipCorner" FillRule="Nonzero">
+            <RectangleGeometry RadiusX="23.8" RadiusY="25.2"  Rect="0,0,119,126"/>
+        </GeometryGroup>
+
+    </Window.Resources>
+    <Grid Margin="10,5">
+        <Grid.RowDefinitions>
+            <RowDefinition MinHeight="130" Height="auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition  Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="130"/>
+        </Grid.ColumnDefinitions>
+
+        <Border BorderThickness="0,0,1,0" Margin="3" BorderBrush="{DynamicResource VRBorderLine}" >
+            <WrapPanel Margin="5,5,100,5" VerticalAlignment="Center">
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <TextBlock  VerticalAlignment="Center"  Margin="5,0">部&#160;&#160;&#160;门:</TextBlock>
+                    <ComboBox  Width="160" SelectedValue="{Binding Department}" ItemsSource="{Binding Orgs}"></ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <TextBlock  VerticalAlignment="Center" Margin="7,0,5,0">职&#160;&#160;&#160;务:</TextBlock>
+                    <ComboBox Width="160" SelectedValue="{Binding Job}" ItemsSource="{Binding Jobs}"></ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <TextBlock  VerticalAlignment="Center" Margin="5,0">姓&#160;&#160;&#160;名:</TextBlock>
+                    <TextBox  Width="160" Text="{Binding Name}"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <TextBlock  VerticalAlignment="Center" Margin="5,0">电&#160;&#160;&#160;话:</TextBlock>
+                    <TextBox  Width="160"  Text="{Binding PhoneNum}"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <TextBlock VerticalAlignment="Center" Margin="5,0">证件号:</TextBlock>
+                    <TextBox Width="160" Tag="请输入身份证或工作证号" 
+                             Style="{DynamicResource TBoxLightWatermark}" Text="{Binding CertificateId}"
+                             HorizontalAlignment="Center" VerticalAlignment="Center" >
+                    </TextBox>
+                </StackPanel>
+            </WrapPanel>
+        </Border>
+
+        <Image Grid.Column="2" Margin="1"  Width="119" Height="126"  
+               Clip="{StaticResource clipCorner}" Stretch="UniformToFill"   
+               Source="{Binding FacePic}"/>
+
+        <Border BorderThickness="0,1,0,1" Margin="3"  BorderBrush="{DynamicResource BorderLine}"
+                Grid.ColumnSpan="3" Grid.Row="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                
+                <ListView Grid.Row="0" Margin="10,0" 
+                          ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                          ScrollViewer.VerticalScrollBarVisibility="Auto" Width="860"
+                      VerticalAlignment="Center" HorizontalAlignment="Center"
+                      SelectionMode="Single"  BorderThickness="0"
+                      ItemsSource="{Binding Images}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="3">                               
+                                <Image Margin="4,0"                                       
+                                       Cursor="Hand"  
+                                       MouseLeftButtonDown="Image_MouseLeftButtonDown"
+                                       Width="119" Height="126" Tag="{Binding}"
+                                       Stretch="UniformToFill"    Clip="{StaticResource clipCorner}"                             
+                                       Source="{Binding FacePic}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ListView>
+
+                <StackPanel Grid.Row="1" Margin="6" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Margin="5" Padding="3">&lt;&lt;上一页</Button>
+                    <TextBlock VerticalAlignment="Center">第</TextBlock>
+                    <ComboBox Width="50" VerticalAlignment="Center" 
+                              ItemsSource="{Binding Nums}" SelectedIndex="{Binding Index}"/>
+
+                    <TextBlock VerticalAlignment="Center">页</TextBlock>
+                    <Button Margin="5" Padding="3">下一页&gt;&gt;</Button>
+                </StackPanel>
+
+            </Grid>
+
+        </Border>
+
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="3" Margin="0,15,0,0" Orientation="Horizontal" 
+                    HorizontalAlignment="Center">
+            
+            <Button Margin="5" IsDefault="True" Command="{Binding SaveCommand}" Padding="3">保  存</Button>
+            <Button Margin="5" IsCancel="True" Padding="3">取  消</Button>
+        </StackPanel>
+    </Grid>
+</css:BlankWindow>

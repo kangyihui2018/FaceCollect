@@ -1,0 +1,49 @@
+﻿<Window x:Class="FaceCollect.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FaceCollect"
+        mc:Ignorable="d"
+        Title="东胜检察院人员信息采集" Height="450" Width="800" Icon="/FaceCollect;component/window.ico">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Border  BorderThickness="1" BorderBrush="Bisque" Margin="2" Padding="2">
+        <ListBox  MinWidth="150" BorderBrush="Transparent">
+                <TextBlock>全院人员</TextBlock>
+                <TextBlock>院领导</TextBlock>
+            <TextBlock>检察委员会</TextBlock>
+        </ListBox>
+       </Border>
+        <Border BorderThickness="1" BorderBrush="Bisque" Grid.Column="1"  Margin="2" Padding="2">
+            <StackPanel >
+                <StackPanel Orientation="Horizontal" Margin="3" HorizontalAlignment="Right" VerticalAlignment="Center">
+                    <TextBlock VerticalAlignment="Center">XX部门共计(XX)人&#160;&#160;&#160;&#160;&#160;</TextBlock>
+                    <Button Margin="5" Padding="3" >新 增</Button>
+                    <Button Margin="5" Padding="3">修 改</Button>
+                    <Button Margin="5" Padding="3">删 除</Button>
+                </StackPanel>
+                <Border BorderThickness="0,1,0,0" BorderBrush="Bisque" Grid.Column="1" >
+                    <WrapPanel Margin="2">
+                    <Border BorderThickness="1" BorderBrush="Green" Margin="3" CornerRadius="5">
+                        <StackPanel HorizontalAlignment="Center">
+                            <Image Height="140" Width="120" Margin="5" Source="/FaceCollect;component/defaultRect.png"></Image>
+                            <TextBlock Margin="5" HorizontalAlignment="Center">姓名:张三</TextBlock>
+                        </StackPanel>
+                    </Border>
+                    <Border BorderThickness="1" BorderBrush="Green" Margin="3" CornerRadius="5">
+                        <StackPanel HorizontalAlignment="Center">
+                            <Image Height="140" Width="120" Margin="5" Source="/FaceCollect;component/defaultRect.png"></Image>
+                            <TextBlock Margin="5" HorizontalAlignment="Center">姓名:李四</TextBlock>
+                        </StackPanel>
+                    </Border>
+                </WrapPanel>
+                </Border>
+            </StackPanel>
+        </Border>
+    
+    </Grid>
+</Window>

@@ -20,7 +20,7 @@ namespace FaceCollect.Entity
         /// <param name="onlyUnBindPersonPic">是否仅返回未绑定到人员的图片信息</param>
         /// <returns></returns>
         [OperationContract]
-        List<ImageInfo> GetFace(int startIndex, int endIndex, bool onlyUnBindPersonPic = false);
+        ImageInfo[] GetFace(int startIndex, int endIndex, bool onlyUnBindPersonPic = false);
 
         /// <summary>
         /// 获取人脸图片数量
