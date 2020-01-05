@@ -138,6 +138,8 @@ namespace FaceCollect.ViewModels
         {
             PersonWindow win = new PersonWindow();
             win.Owner = Application.Current.MainWindow;
+            var model = win.DataContext as PersonWindowViewModel;
+            model.Department = this.OrgName;
             var ret = win.ShowDialog();
             if (ret == true)
             {
