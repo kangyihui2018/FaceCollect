@@ -105,13 +105,12 @@
                 </ListView>
 
                 <StackPanel Grid.Row="1" Margin="6" Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button Margin="5" Padding="3">&lt;&lt;上一页</Button>
+                    <Button Margin="5" Padding="3" Command="{Binding PreviousPageCommand}">&lt;&lt;上一页</Button>
                     <TextBlock VerticalAlignment="Center">第</TextBlock>
                     <ComboBox Width="50" VerticalAlignment="Center" 
                               ItemsSource="{Binding Nums}" SelectedIndex="{Binding Index}"/>
-
                     <TextBlock VerticalAlignment="Center">页</TextBlock>
-                    <Button Margin="5" Padding="3">下一页&gt;&gt;</Button>
+                    <Button Margin="5" Padding="3" Command="{Binding NextPageCommand}" >下一页&gt;&gt;</Button>
                 </StackPanel>
 
             </Grid>

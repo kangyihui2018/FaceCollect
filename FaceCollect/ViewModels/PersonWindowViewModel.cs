@@ -14,6 +14,10 @@ namespace FaceCollect.ViewModels
     {
         public RelayCommand SaveCommand { get; private set; }
 
+        public RelayCommand PreviousPageCommand { get; private set; }
+
+        public RelayCommand NextPageCommand { get; private set; }
+
         public List<String> Jobs { get { return StartWindowViewModel.GetJobs(); } }
 
         public List<String> Orgs { get { return StartWindowViewModel.Orgs.ToList(); } }
@@ -115,10 +119,21 @@ namespace FaceCollect.ViewModels
         {
             this.SaveCommand = new RelayCommand(this.OnSave);
             this.OnLoad();
-
+            this.PreviousPageCommand = new RelayCommand(this.OnPreviousPage,(e)=>this.Index!=0);
+            this.NextPageCommand = new RelayCommand(this.OnNextPage, e => this.Index != this.Nums.Count - 1);
             this.filename = "";
             this.facePic = ImageManager.GetDefaultFace("defaultRect.png");
             this.ViewDoubleClickCommand = new RelayCommand(this.OnDoubleClick);
+        }
+
+        private void OnPreviousPage(object obj)
+        {
+            this.Index--;
+        }
+
+        private void OnNextPage(object obj)
+        {
+            this.Index++;
         }
 
         public void OnDoubleClick(object obj)
@@ -134,7 +149,7 @@ namespace FaceCollect.ViewModels
         {
             if (string.IsNullOrEmpty(this.name))
             {
-                Plus.CSS.PromptHelper.Show("名称必须填写。");
+                Plus.CSS.PromptHelper.Show("姓名必须填写。");
                 return;
             }
 
