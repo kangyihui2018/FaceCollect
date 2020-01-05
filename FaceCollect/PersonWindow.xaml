@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FaceCollect"
         mc:Ignorable="d"
-   
          xmlns:css="clr-namespace:Plus.CSS;assembly=Plus.CSS"
         WindowStartupLocation="CenterScreen" BorderThickness="1"  BorderBrush="Black"
-        Title="人员信息" MinHeight="500" MinWidth="900" ShowInTaskbar="False" Background="#002357">
+         Icon="/FaceCollect;component/window.ico"
+        Title="人员信息" MinHeight="200" MinWidth="600"  MaxWidth="900" ShowInTaskbar="False" Background="#002357">
     <Window.Resources>
         <LinearGradientBrush  x:Key="BorderLine" StartPoint="0,0.5" EndPoint="1,0.5" >
             <GradientStop Offset="0.0" Color="#024EA3" />
@@ -26,6 +26,10 @@
             <RectangleGeometry RadiusX="8" RadiusY="8"  Rect="0,0,105,140"/>
         </GeometryGroup>
 
+
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White"></Setter>
+        </Style>
     </Window.Resources>
     <Grid Margin="10,5">
         <Grid.RowDefinitions>
@@ -40,7 +44,7 @@
         </Grid.ColumnDefinitions>
 
         <Border BorderThickness="0,0,1,0" Margin="3" BorderBrush="{DynamicResource VRBorderLine}" >
-            <WrapPanel Margin="5,5,100,5" VerticalAlignment="Center">
+            <WrapPanel Margin="5,5,5,5" VerticalAlignment="Center">
                 <StackPanel Orientation="Horizontal" Margin="5">
                     <TextBlock  VerticalAlignment="Center"  Margin="5,0">部&#160;&#160;&#160;门:</TextBlock>
                     <ComboBox  Width="160" SelectedValue="{Binding Department}" ItemsSource="{Binding Orgs}"></ComboBox>
@@ -117,9 +121,10 @@
 
         </Border>
 
-        <StackPanel Grid.Row="2" Grid.ColumnSpan="3" Margin="0,15,0,0" Orientation="Horizontal" 
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="3"
+                    Margin="0,15,0,0" 
+                    Orientation="Horizontal" 
                     HorizontalAlignment="Center">
-            
             <Button Margin="5" IsDefault="True" Command="{Binding SaveCommand}" Padding="3">保  存</Button>
             <Button Margin="5" IsCancel="True" Padding="3">取  消</Button>
         </StackPanel>
