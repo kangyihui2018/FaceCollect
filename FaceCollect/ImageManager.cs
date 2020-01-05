@@ -17,14 +17,18 @@ namespace FaceCollect
         public static Dictionary<string, ImageInfo> images = new Dictionary<string, ImageInfo>();
         public static void InitImage()
         {
-            //TODO 可能有通讯字节大小的问题
-            var imgs = RasAssist.CallRemoteService<IFaceCollect, ImageInfo[]>(ee => ee.GetFace(0, 1000, false));
-            foreach (var item in imgs)
+            int index = 0;
+            int step = 50;
+            while (true)
             {
-                string key = item.FileName;
-                if (string.IsNullOrEmpty(key)) continue;
-
-                if (!images.ContainsKey(key)) images.Add(key, item);               
+                var imags = RasAssist.CallRemoteService<IFaceCollect, ImageInfo[]>(ee => ee.GetFace(index, index+ step, false));
+                foreach (var item in imags)
+                {
+                    string key = item.FileName;
+                    images.Add(key, item);
+                }
+                index += step;
+                if (imags.Length < step) break;
             }
         }
 

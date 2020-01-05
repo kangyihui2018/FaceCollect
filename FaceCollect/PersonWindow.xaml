@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:FaceCollect"
         mc:Ignorable="d"
          xmlns:css="clr-namespace:Plus.CSS;assembly=Plus.CSS"
-        WindowStartupLocation="CenterScreen" BorderThickness="1"  BorderBrush="Black"
+        WindowStartupLocation="CenterScreen" BorderThickness="1"  BorderBrush="LightGreen"
          Icon="/FaceCollect;component/window.ico"
         Title="人员信息" MinHeight="200" MinWidth="600"  MaxWidth="900" ShowInTaskbar="False" Background="#002357">
     <Window.Resources>
