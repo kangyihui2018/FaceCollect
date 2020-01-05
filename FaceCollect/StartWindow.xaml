@@ -12,7 +12,7 @@
          Icon="/FaceCollect;component/window.ico" Background="#002357">
     <Window.Resources>
         <GeometryGroup x:Key="clipCorner" FillRule="Nonzero">
-            <RectangleGeometry RadiusX="15" RadiusY="15"  Rect="0,0,170,180"/>
+            <RectangleGeometry RadiusX="15" RadiusY="25.2"  Rect="0,0,170,180"/>
         </GeometryGroup>
     </Window.Resources>
     

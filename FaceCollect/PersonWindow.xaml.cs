@@ -19,7 +19,7 @@ namespace FaceCollect
     /// <summary>
     /// WindowEdit.xaml 的交互逻辑
     /// </summary>
-    public partial class PersonWindow  : BlankWindow
+    public partial class PersonWindow  : Window
     {
         PersonWindowViewModel vm;
         public PersonWindow()
