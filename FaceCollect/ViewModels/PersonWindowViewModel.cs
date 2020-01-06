@@ -18,6 +18,8 @@ namespace FaceCollect.ViewModels
 
         public RelayCommand NextPageCommand { get; private set; }
 
+        public RelayCommand CancelCommand { get; private set; }
+
         public List<String> Jobs { get { return StartWindowViewModel.GetJobs(); } }
 
         public List<String> Orgs { get { return StartWindowViewModel.Orgs.ToList(); } }
@@ -122,6 +124,7 @@ namespace FaceCollect.ViewModels
             this.OnLoad();
             this.PreviousPageCommand = new RelayCommand(this.OnPreviousPage,(e)=>this.Index!=0);
             this.NextPageCommand = new RelayCommand(this.OnNextPage, e => this.Index != this.Nums.Last());
+            this.CancelCommand = new RelayCommand((ee) => (this.mainScope as Window).Close());
             this.filename = "";
             this.facePic = ImageManager.GetDefaultFace("defaultRect.png");
             this.ViewDoubleClickCommand = new RelayCommand(this.OnDoubleClick);

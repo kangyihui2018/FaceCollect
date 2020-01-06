@@ -12,7 +12,7 @@
          Icon="/FaceCollect;component/window.ico" Background="#002357">
     <Window.Resources>
         <GeometryGroup x:Key="clipCorner" FillRule="Nonzero">
-            <RectangleGeometry RadiusX="15" RadiusY="25.2"  Rect="0,0,170,180"/>
+            <RectangleGeometry RadiusX="8" RadiusY="8"  Rect="0,0,150,200"/>
         </GeometryGroup>
     </Window.Resources>
     
@@ -179,12 +179,10 @@
                                     <RowDefinition Height="*"/>
                                     <RowDefinition Height="auto"/>
                                 </Grid.RowDefinitions>
-
-                                <Image Grid.Row="0" Width="170" Height="180"
+                                <Image Grid.Row="0" Width="150" Height="200"
                                        Stretch="UniformToFill"  
                                        Clip="{StaticResource clipCorner}"    
                                        Source="{Binding FacePic}"/>
-
                                 <TextBlock Grid.Row="1" Margin="5" HorizontalAlignment="Center" 
                                            Text="{Binding Name,StringFormat=姓名:{0}}" />
                             </Grid>
