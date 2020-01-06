@@ -122,7 +122,6 @@ namespace FaceCollect.ViewModels
         {
             this.SaveCommand = new RelayCommand(this.OnSave);
             this.OnLoad();
-      
             this.PreviousPageCommand = new RelayCommand(this.OnPreviousPage,(e)=>this.Index!=0);
             this.NextPageCommand = new RelayCommand(this.OnNextPage, e => this.Index != this.Nums.Last()-1);
             this.CancelCommand = new RelayCommand((ee) => (this.mainScope as Window).Close());
@@ -210,15 +209,12 @@ namespace FaceCollect.ViewModels
 
         private void GetImages()
         {
-            var temp = this.Images.ToArray();
             this.Images.Clear();
-           
             int startIndex = this.index * PAGECOUNT;
             int endIndex = (this.index + 1) * PAGECOUNT;
             int maxCount = 6;
             int tempEndIndex = endIndex - startIndex > maxCount ? startIndex + maxCount : endIndex;
             var imgs = RasAssist.CallRemoteService<IFaceCollect, ImageInfo[]>(ee => ee.GetFace(startIndex, tempEndIndex, true));
-           
             while (imgs != null)
             {
                 if (imgs.Length == 0) break;
