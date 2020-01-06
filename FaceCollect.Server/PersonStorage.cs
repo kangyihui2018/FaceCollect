@@ -74,6 +74,7 @@ namespace FaceCollect.Server
             while (Persons.Any(e => e.CertificateId == code))
             {
                 flag++;
+                code = (flag).ToString().PadLeft(3, '0');
             }
             flag++;
             return code;

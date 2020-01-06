@@ -123,7 +123,8 @@ namespace FaceCollect.ViewModels
             this.SaveCommand = new RelayCommand(this.OnSave);
             this.OnLoad();
             this.PreviousPageCommand = new RelayCommand(this.OnPreviousPage,(e)=>this.Index!=0);
-            this.NextPageCommand = new RelayCommand(this.OnNextPage, e => this.Index != this.Nums.Last()-1);
+            this.NextPageCommand = new RelayCommand(this.OnNextPage, e =>
+            this.Index != this.Nums.Last()-1);
             this.CancelCommand = new RelayCommand((ee) => (this.mainScope as Window).Close());
             this.filename = "";
             this.facePic = ImageManager.GetDefaultFace("defaultRect.png");
@@ -199,7 +200,11 @@ namespace FaceCollect.ViewModels
             var count = RasAssist.CallRemoteService<IFaceCollect, int>(ee => ee.GetPicCount(true));
             int num = count / PAGECOUNT;
             int ys = count % PAGECOUNT;
-            if (count == 0) return;
+            if (count == 0)
+            {
+                this.Nums.Add(1);
+                return;
+            }
             if (ys > 0) num++;
             for (int i = 1; i <= num; i++)
             {
