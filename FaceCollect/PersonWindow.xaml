@@ -83,9 +83,9 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 
-                <ListView Grid.Row="0" Margin="10,0" 
+                <ListView Grid.Row="0" Margin="30,0" 
                           ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                          ScrollViewer.VerticalScrollBarVisibility="Auto" Width="880"
+                          ScrollViewer.VerticalScrollBarVisibility="Auto" Width="950"
                       VerticalAlignment="Center" HorizontalAlignment="Center"
                       SelectionMode="Single"  BorderThickness="0"
                       ItemsSource="{Binding Images}">
