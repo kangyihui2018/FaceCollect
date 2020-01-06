@@ -191,8 +191,9 @@ namespace FaceCollect.ViewModels
                 {
                     FacePic = ImageManager.GetImage(n.FacePicFileName),
                     Person = n,
-                    Name=n.Name,
-                    Job=jobs.IndexOf(n.Job),
+                    Name = n.Name,
+                    Job = jobs.IndexOf(n.Job),
+                    Post = n.Job
                 };
 
                 tmps.Add(person);

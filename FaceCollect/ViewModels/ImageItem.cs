@@ -29,6 +29,8 @@ namespace FaceCollect.ViewModels
 
         public int Job { get; set; }
 
+        public string Post { get; set; }
+
         public Person Person { get; set; }
     }
 }

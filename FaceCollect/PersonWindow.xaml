@@ -65,7 +65,7 @@
                     <TextBlock VerticalAlignment="Center" Margin="5,0">证件号:</TextBlock>
                     <TextBox Width="160" Tag="请输入身份证或工作证号" 
                              Style="{DynamicResource TBoxLightWatermark}" Text="{Binding CertificateId}"
-                             HorizontalAlignment="Center" VerticalAlignment="Center"  IsReadOnly="True">
+                             HorizontalAlignment="Center" VerticalAlignment="Center">
                     </TextBox>
                 </StackPanel>
             </WrapPanel>
