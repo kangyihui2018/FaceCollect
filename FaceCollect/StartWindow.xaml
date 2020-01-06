@@ -169,6 +169,8 @@
 
                 <ListView Grid.Row="2" Margin="6,0"
                       VerticalAlignment="Top" BorderThickness="0"
+                          ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                          ScrollViewer.VerticalScrollBarVisibility="Auto"
                       HorizontalAlignment="Left" SelectionMode="Single"
                       SelectedItem="{Binding SelectedPerson}"
                       ItemsSource="{Binding Persons}">
