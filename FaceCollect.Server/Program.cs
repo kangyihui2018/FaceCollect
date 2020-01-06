@@ -13,6 +13,7 @@ namespace FaceCollect.Server
     {
         static void Main(string[] args)
         {
+             var temp= int.Parse("010");
             //var oldPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "FacePic2");
             //var newPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "FacePic");
             //var files = Directory.CreateDirectory(oldPath).GetFiles("*.jpg");

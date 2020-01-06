@@ -140,6 +140,7 @@ namespace FaceCollect.ViewModels
             win.Owner = Application.Current.MainWindow;
             var model = win.DataContext as PersonWindowViewModel;
             model.Department = this.OrgName;
+            model.CertificateId = RasAssist.CallRemoteService<IFaceCollect, string>((ee) => ee.GetCodeNum());
             var ret = win.ShowDialog();
             if (ret == true)
             {

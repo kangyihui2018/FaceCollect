@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace FaceCollect.Server
 {
-    class PersonSevice : FaceCollect.Entity.IFaceCollect
+    class PersonSevice : IFaceCollect
     {
         public bool AddOrEditPersonInfo(Person person)
         {
@@ -95,6 +95,11 @@ namespace FaceCollect.Server
         public byte[] GetImageByFileName(string fileName)
         {
             return File.ReadAllBytes(Path.Combine(PersonStorage.DirFacePic.FullName, fileName));
+        }
+
+        public string GetCodeNum()
+        {
+            return PersonStorage.GetNewCode();
         }
     }
 }

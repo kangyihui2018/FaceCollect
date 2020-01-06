@@ -66,5 +66,8 @@ namespace FaceCollect.Entity
 
         [OperationContract]
         byte[] GetImageByFileName(string fileName);
+        
+        [OperationContract]
+        string GetCodeNum();
     }
 }

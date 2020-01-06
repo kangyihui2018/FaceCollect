@@ -15,6 +15,7 @@ namespace FaceCollect.Server
         private static string FilePersons = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"person.xml");
         public static DirectoryInfo DirFacePic = Directory.CreateDirectory(DirPath);
         private static List<Person> Persons = new List<Person>();
+        private static int flag = 1;
 
         public static ImageInfo GetImageInfoByName(string fullFilePath)
         {
@@ -67,6 +68,15 @@ namespace FaceCollect.Server
             }
         }
 
-     
+        public static string GetNewCode()
+        {
+            var code = (flag).ToString().PadLeft(3, '0');
+            while (Persons.Any(e => e.CertificateId == code))
+            {
+                flag++;
+            }
+            flag++;
+            return code;
+        }
     }
 }
