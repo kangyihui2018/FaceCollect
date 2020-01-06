@@ -15,6 +15,7 @@ namespace FaceCollect.Server
 
             while (true)
             {
+                Console.WriteLine("人员信息采集程序运行中……，请勿关闭。");
                 Console.Read();
             }
 

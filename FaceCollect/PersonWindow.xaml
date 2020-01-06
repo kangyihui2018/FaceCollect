@@ -34,8 +34,8 @@
     <Grid Margin="10,5">
         <Grid.RowDefinitions>
             <RowDefinition MinHeight="130" Height="auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition  Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition  Height="60"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -85,8 +85,8 @@
                 
                 <ListView Grid.Row="0" Margin="30,0" 
                           ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                          ScrollViewer.VerticalScrollBarVisibility="Auto" Width="950"
-                      VerticalAlignment="Center" HorizontalAlignment="Center"
+                          ScrollViewer.VerticalScrollBarVisibility="Auto"
+                      VerticalAlignment="Top" HorizontalAlignment="Center"
                       SelectionMode="Single"  BorderThickness="0"
                       ItemsSource="{Binding Images}">
                     <ItemsControl.ItemTemplate>
@@ -121,9 +121,8 @@
 
         </Border>
 
-        <StackPanel Grid.Row="2" Grid.ColumnSpan="3"
-                    Margin="0,15,0,0" 
-                    Orientation="Horizontal" 
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="3"                   
+                    Orientation="Horizontal" VerticalAlignment="Center"
                     HorizontalAlignment="Center">
             <Button Margin="5" IsDefault="True" Command="{Binding SaveCommand}" Padding="3">保  存</Button>
             <Button Margin="5" IsCancel="True" Padding="3" Command="{Binding CancelCommand}">取  消</Button>
