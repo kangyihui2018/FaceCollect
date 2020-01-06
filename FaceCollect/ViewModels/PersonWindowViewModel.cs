@@ -122,7 +122,7 @@ namespace FaceCollect.ViewModels
         {
             this.SaveCommand = new RelayCommand(this.OnSave);
             this.OnLoad();
-            this.GetImages();
+      
             this.PreviousPageCommand = new RelayCommand(this.OnPreviousPage,(e)=>this.Index!=0);
             this.NextPageCommand = new RelayCommand(this.OnNextPage, e => this.Index != this.Nums.Last()-1);
             this.CancelCommand = new RelayCommand((ee) => (this.mainScope as Window).Close());
