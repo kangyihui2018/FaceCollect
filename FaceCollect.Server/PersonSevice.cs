@@ -91,5 +91,10 @@ namespace FaceCollect.Server
             return temp[0];
           
         }
+
+        public byte[] GetImageByFileName(string fileName)
+        {
+            return File.ReadAllBytes(Path.Combine(PersonStorage.DirFacePic.FullName, fileName));
+        }
     }
 }

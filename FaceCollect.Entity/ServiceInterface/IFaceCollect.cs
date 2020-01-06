@@ -63,5 +63,8 @@ namespace FaceCollect.Entity
         /// <returns></returns>
         [OperationContract]
         string[] GetJobs();
+
+        [OperationContract]
+        byte[] GetImageByFileName(string fileName);
     }
 }

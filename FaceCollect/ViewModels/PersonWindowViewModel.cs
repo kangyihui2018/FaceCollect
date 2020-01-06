@@ -122,8 +122,9 @@ namespace FaceCollect.ViewModels
         {
             this.SaveCommand = new RelayCommand(this.OnSave);
             this.OnLoad();
+            this.GetImages();
             this.PreviousPageCommand = new RelayCommand(this.OnPreviousPage,(e)=>this.Index!=0);
-            this.NextPageCommand = new RelayCommand(this.OnNextPage, e => this.Index != this.Nums.Last());
+            this.NextPageCommand = new RelayCommand(this.OnNextPage, e => this.Index != this.Nums.Last()-1);
             this.CancelCommand = new RelayCommand((ee) => (this.mainScope as Window).Close());
             this.filename = "";
             this.facePic = ImageManager.GetDefaultFace("defaultRect.png");
@@ -194,38 +195,44 @@ namespace FaceCollect.ViewModels
 
         private void OnLoad()
         {
-            this.Images.Clear();
+            this.GetImages();
+            Nums.Clear();
+            var count = RasAssist.CallRemoteService<IFaceCollect, int>(ee => ee.GetPicCount(true));
+            int num = count / PAGECOUNT;
+            int ys = count % PAGECOUNT;
+            if (count == 0) return;
+            if (ys > 0) num++;
+            for (int i = 1; i <= num; i++)
+            {
+                Nums.Add(i);
+            }
+        }
 
+        private void GetImages()
+        {
+            var temp = this.Images.ToArray();
+            this.Images.Clear();
+           
             int startIndex = this.index * PAGECOUNT;
             int endIndex = (this.index + 1) * PAGECOUNT;
-
-            var imgs = RasAssist.CallRemoteService<IFaceCollect, ImageInfo[]>(ee => ee.GetFace(startIndex, endIndex, true));
-            foreach (var item in imgs)
+            int maxCount = 6;
+            int tempEndIndex = endIndex - startIndex > maxCount ? startIndex + maxCount : endIndex;
+            var imgs = RasAssist.CallRemoteService<IFaceCollect, ImageInfo[]>(ee => ee.GetFace(startIndex, tempEndIndex, true));
+           
+            while (imgs != null)
             {
-                ImageItem img = new ImageItem();
-                img.FileName = item.FileName;
-                img.FacePic = ImageManager.BitmapToBitmapSource(item.ImageData);
-                img.ImageData = item.ImageData;
-
-                this.Images.Add(img);
-            }
-
-            var count = RasAssist.CallRemoteService<IFaceCollect, int>(ee => ee.GetPicCount(true));
-
-            int num = count / 12;
-            int ys = count % 12;
-
-            if (num == 0 && ys >= 0)
-            {
-                Nums.Add(1);
-                return;
-            }
-
-            for (int i = 1; i <= num; i++) Nums.Add(i);
-
-            if (ys > 0)
-            {
-                Nums.Add(++num);
+                if (imgs.Length == 0) break;
+                foreach (var item in imgs)
+                {
+                    ImageItem img = new ImageItem();
+                    img.FileName = item.FileName;
+                    img.FacePic = ImageManager.BitmapToBitmapSource(item.ImageData);
+                    this.Images.Add(img);
+                }
+                startIndex += maxCount;
+                tempEndIndex = endIndex - startIndex > maxCount ? startIndex + maxCount : endIndex;
+                if (startIndex >= endIndex) break;
+                imgs = RasAssist.CallRemoteService<IFaceCollect, ImageInfo[]>(ee => ee.GetFace(startIndex, tempEndIndex, true));
             }
         }
     }

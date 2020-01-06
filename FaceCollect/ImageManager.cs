@@ -17,30 +17,32 @@ namespace FaceCollect
         public static Dictionary<string, ImageInfo> images = new Dictionary<string, ImageInfo>();
         public static void InitImage()
         {
-            int index = 0;
-            int step = 50;
-            while (true)
-            {
-                var imags = RasAssist.CallRemoteService<IFaceCollect, ImageInfo[]>(ee => ee.GetFace(index, index+ step, false));
-                foreach (var item in imags)
-                {
-                    string key = item.FileName;
-                    images.Add(key, item);
-                }
-                index += step;
-                if (imags.Length < step) break;
-            }
+            //int index = 0;
+            //int step = 10;
+            //while (true)
+            //{
+            //    var imags = RasAssist.CallRemoteService<IFaceCollect, ImageInfo[]>(ee => ee.GetFace(index, index+ step, false));
+            //    foreach (var item in imags)
+            //    {
+            //        string key = item.FileName;
+            //        images.Add(key, item);
+            //    }
+            //    index += step;
+            //    if (imags.Length < step) break;
+            //}
         }
 
         public static BitmapSource GetImage(string filename)
         {
-            if (images.ContainsKey(filename))
-            {
-                var obj = images[filename];
-                return BitmapToBitmapSource(obj.ImageData);
-            }
+            var bytes=  RasAssist.CallRemoteService<IFaceCollect, byte[]>(ee=> { return ee.GetImageByFileName(filename); });
 
-            return GetDefaultFace("defaultRect.png");
+            return BitmapToBitmapSource(bytes);
+            //if (images.ContainsKey(filename))
+            //{
+            //    var obj = images[filename];
+            //    return BitmapToBitmapSource(obj.ImageData);
+            //}
+            //return GetDefaultFace("defaultRect.png");
         }
 
         public static BitmapSource BitmapToBitmapSource(byte[] bitmap)
