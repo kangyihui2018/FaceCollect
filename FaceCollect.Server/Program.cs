@@ -13,7 +13,7 @@ namespace FaceCollect.Server
     {
         static void Main(string[] args)
         {
-             var temp= int.Parse("010");
+
             //var oldPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "FacePic2");
             //var newPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "FacePic");
             //var files = Directory.CreateDirectory(oldPath).GetFiles("*.jpg");
@@ -25,7 +25,7 @@ namespace FaceCollect.Server
             //    {
             //        SystemTools.PrintErrorInfo(files[i].Name);
             //    }
-            //    var fileName = (i + 1).ToString().PadLeft(3, '0') + ".jpg";
+            //    var fileName = (i+ 101).ToString().PadLeft(3, '0') + ".jpg";
             //    bp2.Save(Path.Combine(newPath, fileName));
             //    bmp.Dispose();
             //    bp2.Dispose();
